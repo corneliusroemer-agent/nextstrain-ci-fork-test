@@ -1,0 +1,14 @@
+# Only to check that pathogen-repo-build checks out its own repo/sha via job.workflow_*;
+# the AWS credentials step after it is expected to fail outside the nextstrain org.
+name: build-fixed
+on:
+  workflow_dispatch:
+permissions:
+  id-token: write
+jobs:
+  build:
+    uses: corneliusroemer-agent/.github/.github/workflows/pathogen-repo-build.yaml@job-context-instead-of-oidc
+    with:
+      repo: nextstrain/zika-tutorial
+      runtime: docker
+      run: nextstrain build .

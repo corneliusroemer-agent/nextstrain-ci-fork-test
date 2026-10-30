@@ -1,0 +1,11 @@
+name: ci-fixed
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  ci:
+    uses: corneliusroemer-agent/.github/.github/workflows/pathogen-repo-ci.yaml@job-context-instead-of-oidc
+    with:
+      repo: nextstrain/zika
+      runtimes: |
+        - docker
