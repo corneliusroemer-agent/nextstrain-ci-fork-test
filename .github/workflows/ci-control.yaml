@@ -2,8 +2,8 @@ name: ci-control
 on:
   pull_request:
   workflow_dispatch:
-# What nextstrain/.github pathogen-repo-ci.yaml@master requests; a caller in a
-# personal-account repo must grant it explicitly or the run fails at startup.
+# The permissions nextstrain/.github pathogen-repo-ci.yaml@master requests, so
+# both callers get the same token a nextstrain repo would.
 permissions:
   contents: read
   id-token: write
