@@ -2,6 +2,12 @@ name: ci-control
 on:
   pull_request:
   workflow_dispatch:
+# What nextstrain/.github pathogen-repo-ci.yaml@master requests; a caller in a
+# personal-account repo must grant it explicitly or the run fails at startup.
+permissions:
+  contents: read
+  id-token: write
+  packages: read
 jobs:
   ci:
     uses: nextstrain/.github/.github/workflows/pathogen-repo-ci.yaml@master
