@@ -10,3 +10,4 @@ What shows what:
 
 - **A PR from a fork** is the real test: `ci-control` should fail in `workflow-context` with `Unable to get ACTIONS_ID_TOKEN_REQUEST_URL`, `ci-fixed` should pass.
 - **Dependabot PRs** are not fork-like for this: they get an OIDC token when the caller grants one, so `ci-control` passes there too. [Run 41065881868](https://github.com/corneliusroemer-agent/nextstrain-ci-fork-test/actions/runs/41065881868) (Dependabot, before the callers granted `id-token`, token read-only) only shows that `ci-fixed` needs no OIDC permission.
+fork PR test
